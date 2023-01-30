@@ -1,38 +1,98 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main {
+  background-blend-mode: multiply;
+  min-height: 100vh;
+  min-width: 100vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Edu SA Beginner', Cambria, Cochin, Georgia, Times,
+    'Times New Roman', serif;
+  color: white;
+  transition: background 0.75s ease-in;
+}
+
+.main--content {
+  letter-spacing: 5px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.bibleVerse {
+  font-size: x-large;
+  max-width: 75%;
+  margin: 0 auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.bibleText {
+  font-size: large;
+  max-width: 60%;
+  margin: 0 auto;
+  padding: 1em;
+}
+
+.typewriter {
+  font-family: 'Special Elite', cursive;
+  color: #111;
+  font-size: medium;
+  width: 21.5ch;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 4px solid #111;
+  animation: cursor 1s step-start, text 5s steps(18) alternate;
+}
+
+@keyframes cursor {
+  0%,
+  100% {
+    border-color: #111;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes text {
+  0% {
+    width: 0;
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    width: 21.5ch;
+  }
+}
+
+@media (min-width: 700px) {
+  .bibleVerse {
+    font-size: xx-large;
+    font-style: italic;
+  }
+  .bibleText {
+    font-size: x-large;
+    max-width: 55%;
+  }
+  .typewriter {
+    font-size: large;
+    border-right: 4.5px solid #111;
+    animation: cursor 1s step-start infinite, text 5s steps(19) alternate;
+  }
+}
+
+@media (min-width: 1200px) {
+  .bibleVerse {
+    font-size: 2.5rem;
+  }
+  .bibleText {
+    font-size: 1.75rem;
+    max-width: 55%;
+  }
+  .typewriter {
+    font-size: x-large;
+    border-right: 5px solid #111;
+    animation: cursor 1s step-start infinite, text 5s steps(21) alternate;
   }
 }
